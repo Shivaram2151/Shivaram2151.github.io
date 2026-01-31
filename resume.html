@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivaram Manchala - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --text-main: #1f2937;
+            --text-light: #4b5563;
+            --border: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: var(--text-main);
+            background: #f3f4f6;
+            padding: 40px 20px;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .header-left h1 {
+            font-size: 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            color: #111827;
+        }
+
+        .header-left p {
+            font-size: 18px;
+            color: var(--primary);
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .contact-info a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        section {
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111827;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .job,
+        .project {
+            margin-bottom: 20px;
+        }
+
+        .job-header,
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 5px;
+        }
+
+        .job-title,
+        .project-title {
+            font-size: 16px;
+        }
+
+        .job-date,
+        .project-link {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .company,
+        .tech-stack {
+            font-size: 14px;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 10px;
+        }
+
+        li {
+            font-size: 14px;
+            margin-bottom: 4px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .skills-grid,
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .skill-category {
+            font-size: 14px;
+        }
+
+        .skill-category strong {
+            font-weight: 600;
+            color: #111827;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 0;
+                width: 100%;
+            }
+
+            .btn-group {
+                display: none;
+            }
+        }
+
+        .btn-group {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .action-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .action-btn:hover {
+            background: #1d4ed8;
+        }
+
+        .project-desc {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="btn-group">
+        <button class="action-btn" onclick="window.print()">
+            <span>🖨️</span> Print PDF
+        </button>
+        <button class="action-btn" onclick="downloadResume()">
+            <span>📥</span> Download PDF
+        </button>
+    </div>
+
+    <div class="resume-container">
+        <header>
+            <div class="header-left">
+                <h1>SHIVARAM MANCHALA</h1>
+                <p>Full-Stack Developer (React + Node.js + GraphQL)</p>
+            </div>
+            <div class="contact-info">
+                <p>Jagtial, India | 9100742151</p>
+                <p><a href="mailto:manchalashiva2151@gmail.com">manchalashiva2151@gmail.com</a></p>
+                <p><a href="https://linkedin.com/in/shivaram2151/">linkedin.com/in/shivaram2151</a></p>
+                <p><a href="https://github.com/Shivaram2151">github.com/Shivaram2151</a></p>
+            </div>
+        </header>
+
+        <section>
+            <h2>Professional Summary</h2>
+            <p style="font-size: 14px;">Full-Stack Developer with 1.5 years of experience building scalable web
+                applications using React, Node.js, GraphQL and PostgreSQL. Skilled in API integrations, deployments,
+                responsive UI, debugging and performance optimization.</p>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category"><strong>Frontend:</strong> React.js, Next.js (Basics), JavaScript (ES6+),
+                    Tailwind, HTML, CSS, Bootstrap</div>
+                <div class="skill-category"><strong>Backend:</strong> Node.js, Express.js, GraphQL, REST APIs, Convex
+                    (Serverless)</div>
+                <div class="skill-category"><strong>Database:</strong> PostgreSQL, MySQL, Supabase, SQL</div>
+                <div class="skill-category"><strong>Deploy:</strong> Vercel, Render</div>
+                <div class="skill-category"><strong>Tools:</strong> Git, GitHub, GitLab, Postman, Knex.js, JSON</div>
+                <div class="skill-category"><strong>Concepts:</strong> JWT Auth, Role-based Access, SEO Optimization,
+                    State Management, Performance Optimization</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Work Experience</h2>
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Full-Stack Developer</span>
+                    <span class="job-date">Nov 2024 – Present</span>
+                </div>
+                <div class="company">MUSQUARE TECH PVT LTD (Remote)</div>
+                <ul>
+                    <li>Built HRM, Survey and Hospital Management platforms</li>
+                    <li>Developed modular UI using React + Tailwind</li>
+                    <li>Implemented GraphQL endpoints and optimized queries</li>
+                    <li>Integrated REST APIs for payroll, users and attendance modules</li>
+                    <li>Improved performance via caching & query tuning</li>
+                    <li>Managed Git workflows, PR reviews and version control</li>
+                </ul>
+                <div class="tech-stack">Tech: React, Node.js, Express.js, GraphQL, PostgreSQL, Tailwind, Git</div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Freelance Web Developer</span>
+                    <span class="job-date">Dec 2025 – Jan 2026</span>
+                </div>
+                <div class="company">Self-Employed (Contract) - Spotless Mauritius</div>
+                <div class="project-link" style="margin-bottom: 5px;">Live: <a
+                        href="https://spotlessmauritius.com/">https://spotlessmauritius.com/</a></div>
+                <ul>
+                    <li>Developed a production website for a cleaning services business</li>
+                    <li>Built admin page for contact enquiries & lead tracking</li>
+                    <li>Implemented lead storage & email notifications via Supabase</li>
+                    <li>Delivered responsive UI aligned with client branding</li>
+                    <li>Managed hosting, domain configuration and deployment</li>
+                    <li>Performed on-page SEO for improved business visibility</li>
+                </ul>
+                <div class="tech-stack">Tech: HTML, CSS, JavaScript, Bootstrap, Supabase, Vercel</div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Trainee Software Developer</span>
+                    <span class="job-date">Jul 2024 – Oct 2024</span>
+                </div>
+                <div class="company">Musquare Tech Pvt Ltd</div>
+                <ul>
+                    <li>Assisted in UI development and backend API integrations</li>
+                    <li>Contributed to debugging and performance improvements</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Key Projects</h2>
+            <div class="projects-grid">
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-title">Sweetys Bakery — Premium Artisan Experience</span>
+                        <a href="https://sweetys-bakery.shivaram.online/" class="project-link">Live:
+                            https://sweetys-bakery.shivaram.online/</a>
+                    </div>
+                    <p class="project-desc">A premium bakery platform with high-performance animations and seamless user
+                        transitions.</p>
+                    <div class="tech-stack">Tech: React, Tailwind CSS</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-title">Mahadeva Traders — Luxury Showroom Portfolio</span>
+                        <a href="https://mahadeva-traders.shivaram.online/" class="project-link">Live:
+                            https://mahadeva-traders.shivaram.online/</a>
+                    </div>
+                    <p class="project-desc">Luxury catalog platform for tiles and sanitary ware with a focus on visual
+                        elegance.</p>
+                    <div class="tech-stack">Tech: React, Tailwind CSS</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-title">HRM — Humanwrk (Production Internal Application)</span>
+                    </div>
+                    <p class="project-desc">HR platform for employees, attendance, payroll and evaluations.</p>
+                    <div class="tech-stack">Tech: React, Node.js, GraphQL, PostgreSQL, Tailwind, Render, Vercel</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-title">Online Interview Platform — LinkUp (Personal)</span>
+                        <a href="https://link-up.shivaram.online/" class="project-link">Live:
+                            https://link-up.shivaram.online/</a>
+                    </div>
+                    <p class="project-desc">Interview scheduling, evaluation workflows & candidate tracking.</p>
+                    <div class="tech-stack">Tech: Next.js, Convex, Tailwind CSS, Vercel</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-title">Message Hub — Chat Application</span>
+                        <a href="https://message-hub.shivaram.online/" class="project-link">Live:
+                            https://message-hub.shivaram.online/</a>
+                    </div>
+                    <p class="project-desc">Real-time messaging platform with user authentication, dynamic interactions,
+                        and robust data handling.</p>
+                    <div class="tech-stack">Tech: Node.js, Express.js, React, Tailwind CSS, Socket.io</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-title">Srinivasa Tax Consultant — Portfolio Website (Client Project)</span>
+                        <a href="https://srinivastaxconsultant.in/" class="project-link">Live:
+                            https://srinivastaxconsultant.in/</a>
+                    </div>
+                    <p class="project-desc">Portfolio website with service listings, contact form and SEO improvements.
+                    </p>
+                    <div class="tech-stack">Tech: React, Tailwind CSS, Vercel</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-title">VintageCareer — Job Portal</span>
+                    </div>
+                    <p class="project-desc">Job portal connecting job seekers and employers with postings &
+                        applications.</p>
+                    <div class="tech-stack">Tech: Angular, Spring Boot, MySQL</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-title">Divine Food — Food Ordering Platform</span>
+                        <a href="https://divine-food.shivaram.online/" class="project-link">Live:
+                            https://divine-food.shivaram.online/</a>
+                    </div>
+                    <p class="project-desc">Food ordering system with restaurant management & order processing.</p>
+                    <div class="tech-stack">Tech: Spring Boot, React.js, Tailwind, MySQL</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-grid">
+            <section>
+                <h2>Education</h2>
+                <div class="job" style="margin-bottom: 10px;">
+                    <p><strong>B.Tech</strong> — Electrical & Electronics Engineering, JB Institute of Engineering &
+                        Technology (2023)</p>
+                </div>
+                <div class="job">
+                    <p><strong>Diploma</strong> — Electrical & Electronics Engineering, Trinity College of Engineering
+                        (2019)</p>
+                </div>
+            </section>
+            <section>
+                <h2>Soft Skills</h2>
+                <ul>
+                    <li>Problem Solving</li>
+                    <li>Communication</li>
+                    <li>Debugging</li>
+                    <li>Fast Learner</li>
+                    <li>Collaboration</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function downloadResume() {
+            const element = document.querySelector('.resume-container');
+            const opt = {
+                margin: [30, 30, 30, 30],
+                filename: 'Shivaram_Manchala_Resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: {
+                    scale: 2,
+                    useCORS: true,
+                    logging: false,
+                    letterRendering: true,
+                    scrollY: 0
+                },
+                jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' },
+                pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+            };
+
+            // Avoid common overlapping/empty page issues by resetting scroll before capture
+            window.scrollTo(0, 0);
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+</body>
+
+</html>
